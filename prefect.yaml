@@ -1,0 +1,23 @@
+pull:
+- prefect.deployments.steps.set_working_directory:
+    directory: /opt/prefect/app
+
+
+definitions:
+  work-pools: &docker_pool
+    name: "docker-pool"
+    job_variables:
+      image: "managepydatalouna/get_repo:latest"
+      auto_remove: true
+      image_pull_policy: Never
+
+
+deployments:
+- name: "get_repo-deployment"
+  schedule: null
+  entrypoint: "flows/main.py:get_repo_info"
+  work_pool: *docker_pool
+- name: "pipeline-deployment"
+  schedule: null
+  entrypoint: "flows/main.py:pipeline"
+  work_pool: *docker_pool
