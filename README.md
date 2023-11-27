@@ -19,6 +19,5 @@ PREFECT_API_URL=http://<IP_address>:4200/api docker compose up -d worker
 docker compose up deploy
 ```
 Successful result must look like the following:
-`prefect-deploy exited with code 0`
+`prefect-deploy exited with code 0`  
 7. Run a deployment via Prefect server UI.
-
