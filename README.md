@@ -21,3 +21,10 @@ docker compose up deploy
 Successful result must look like the following:
 `prefect-deploy exited with code 0`  
 7. Run a deployment via Prefect server UI.
+
+## Deploy pipeline changes
+1. Authenticate with `docker login`.
+2. Run `docker pull managepydatalouna/get_repo`
+3. Run `docker compose up deploy`
+
+Then, changes must be applied to a pipeline development, so that you can run it again in the Prefect Server UI.
