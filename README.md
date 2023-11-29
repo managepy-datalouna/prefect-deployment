@@ -10,9 +10,9 @@
 ```shell
 docker compose up server -d
 ```
-5. Find a you server IP addres via `ifconfig` command and start a worker using this address:
+5. Start a Prefect worker
 ```shell
-PREFECT_API_URL=http://<IP_address>:4200/api docker compose up -d worker
+docker compose up -d worker
 ```
 6. Deploy the pipelines:
 ```shell

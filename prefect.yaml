@@ -10,6 +10,8 @@ definitions:
       image: "managepydatalouna/get_repo:latest"
       auto_remove: true
       image_pull_policy: Never
+      networks:
+        - prefect-network
 
 
 deployments:

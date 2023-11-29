@@ -37,7 +37,7 @@ services:
     restart: always
     command: bash -c "/opt/prefect/entrypoint.sh prefect worker start -p docker-pool --type docker"
     environment:
-      - PREFECT_API_URL=${PREFECT_API_URL}
+      - PREFECT_API_URL=http://server:4200/api
       - EXTRA_PIP_PACKAGES=prefect-docker
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
